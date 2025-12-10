@@ -24,10 +24,10 @@ jobs:
           rubygems: latest
       - name: Ruby OpenSSL Version
         run: |
-          $openssl_ver = ruby -v -r openssl -e "puts OpenSSL::OPENSSL_VERSION"
+          $openssl_ver = ruby -r openssl -e "puts OpenSSL::OPENSSL_VERSION"
 
           # コンソールに出力
           Write-Host "Detected: $openssl_ver"
 
-          # Summaryに出力 (Markdown形式のリストとして追記)
+          # Summaryに出力
           echo "* **Ruby ${{ matrix.ruby-version }}:** $openssl_ver" >> $env:GITHUB_STEP_SUMMARY
